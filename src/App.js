@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Inventory from './components/Inventory';
+import Party from './components/Party';
+import MainBox from './components/Main-box'
 
 function App() {
+
+  const [inventory, setInventory] = useState(['frog']);
+  const [party, setParty] = useState(['starlord', 'gamora','drax','rocket','groot'])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {inventory.length > 0 && <Inventory  />}
+      <MainBox  />
+      <Party  />
     </div>
   );
 }
