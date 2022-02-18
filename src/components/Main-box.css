@@ -4,7 +4,7 @@
 }
 .gameplay {
     width: 90%;
-    height: 80%;
+    height: 100%;
     margin-left: 5%;
     margin-top: 5%;
 }
@@ -14,4 +14,7 @@ button {
 .skull {
     width: 150px;
     height: 150px;
+}
+h1 {
+    margin-bottom: 0;
 }   

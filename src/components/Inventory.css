@@ -2,6 +2,9 @@
     flex: 1;
     background-color: grey;
 }
+#inventory-h1 {
+    margin-bottom: 0;
+}
 .inventory-items {
     padding-left: 20px;
     padding-bottom: 20px;;

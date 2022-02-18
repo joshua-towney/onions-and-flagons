@@ -2,7 +2,7 @@ import './Party.css'
 export default function Party() {
     return (
         <div className="party">
-            <h1>Party</h1>
+            <h1 id="party-h1">Party</h1>
             <div className="party-members" id='starlord'>
             <img src="/starlord.jpeg" />
             <div className="bio">

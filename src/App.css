@@ -22,3 +22,10 @@ ul {
   padding: 0;
   text-align: left;
 }
+button {
+  font-size: larger;
+}
+#game-over {
+  height: 300px;
+  width: 300px;
+}

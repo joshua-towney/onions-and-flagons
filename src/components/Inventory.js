@@ -1,44 +1,22 @@
 import './Inventory.css'
 
-export default function Inventory() {
+export default function Inventory({inventory}) {
     return (
         <div className='inventory'>
-            <h1>Inventory</h1>
-            <div className="inventory-items" id='razor'>
-            <img src="/razor.jpg" />
-            <div className="item-description">
-                <h3>Razor</h3>
-                <p>Gifted to you from the village people. It will cut you deep</p>
-            </div>
-            </div>
-            <div className="inventory-items" id='razor'>
-            <img src="/razor.jpg" />
-            <div className="item-description">
-                <h3>Razor</h3>
-                <p>Gifted to you from the village people. It will cut you deep</p>
-            </div>
-            </div>
-            <div className="inventory-items" id='razor'>
-            <img src="/razor.jpg" />
-            <div className="item-description">
-                <h3>Razor</h3>
-                <p>Gifted to you from the village people. It will cut you deep</p>
-            </div>
-            </div>
-            <div className="inventory-items" id='razor'>
-            <img src="/razor.jpg" />
-            <div className="item-description">
-                <h3>Razor</h3>
-                <p>Gifted to you from the village people. It will cut you deep</p>
-            </div>
-            </div>
-            <div className="inventory-items" id='razor'>
-            <img src="/razor.jpg" />
-            <div className="item-description">
-                <h3>Razor</h3>
-                <p>Gifted to you from the village people. It will cut you deep</p>
-            </div>
-            </div>
+            <h1 id="inventory-h1">Inventory</h1>
+            {inventory.map( item => {
+                return (
+                <section className="inventory-items" key={item.name}>
+                    <div>
+                        <img src={item.img} />
+                    </div>
+                    <div>
+                        <h3>{item.name}</h3>
+                        <p>{item.description}</p>
+                    </div>
+                </section>
+                )
+            })}
         </div>
     )
 }
