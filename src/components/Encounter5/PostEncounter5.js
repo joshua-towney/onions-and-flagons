@@ -1,5 +1,5 @@
 
-export default function PostEncounter5({ boss }) {
+export default function PostEncounter5({ boss1 }) {
     return (
         <div>
             <h1>Good to be back off solid ground</h1>
@@ -11,7 +11,7 @@ export default function PostEncounter5({ boss }) {
             <h2>( A booming voice can be heard from outside the ship )</h2>
             <h2>Booming voice: "FIGHT ME FOR MY TREASURE YOU CANDY ASSES!"</h2>
             
-            <button onClick={boss}>Investigate commotion</button>
+            <button onClick={boss1}>Investigate commotion</button>
         </div>
     )
 }

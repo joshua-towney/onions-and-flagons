@@ -30,7 +30,24 @@ import Encounter5Neutral from './components/Encounter5/Encounter5Neutral';
 import Encounter5Bad from './components/Encounter5/Encounter5Bad';
 import Encounter5Good from './components/Encounter5/Encounter5Good';
 import PostEncounter5 from './components/Encounter5/PostEncounter5';
-import Boss from './components/Boss/Boss';
+import Boss1 from './components/Boss/Boss1/Boss1';
+import Boss1GolfClub from './components/Boss/Boss1/Boss1GolfClub';
+import Boss1Magazine from './components/Boss/Boss1/Boss1Magazine';
+import Boss1Lightsaber from './components/Boss/Boss1/Boss1Lightsaber';
+import Boss1Pebble from './components/Boss/Boss1/Boss1Pebble';
+import Boss2 from './components/Boss/Boss2/Boss2.js';
+import Boss2Pebble from './components/Boss/Boss2/Boss2Pebble';
+import Boss2Magazine from './components/Boss/Boss2/Boss2Magazine';
+import Boss2Lightsaber from './components/Boss/Boss2/Boss2Lightsaber';
+import Boss3 from './components/Boss/Boss3/Boss3';
+import Boss3Pebble from './components/Boss/Boss3/Boss3Pebble';
+import Boss3Magazine from './components/Boss/Boss3/Boss3Magazine';
+import Boss4 from './components/Boss/Boss4and5/Boss4';
+import Boss4Magazine from './components/Boss/Boss4and5/Boss4Magazine';
+import Boss5 from './components/Boss/Boss4and5/Boss5';
+import GameOver from './components/GameOver';
+import Victory from './components/Victory';
+
 
 function App() {
 
@@ -65,7 +82,7 @@ function App() {
     {
       "name": "Razor",
       "img": "./razor.jpg",
-      "description": "Sharp blade signed by Terran band The Village People"
+      "description": "Signed by Terran band The Village People"
     },
     {
       "name": "Magazine",
@@ -80,7 +97,7 @@ function App() {
     {
       "name": "Golf club",
       "img": "./golf.jpeg",
-      "description": "Adam's driver"
+      "description": "Looted from Adam Driver"
     },
     {
       "name": "Pebble",
@@ -93,6 +110,7 @@ function App() {
     setMainRender(<Intro recruitParty={recruitParty}/>)
   }
   const newGame = () => {
+    partyCount = 0
     setMainRender(<Home intro={intro}/>)
     setParty([])
     setInventory([])
@@ -102,9 +120,12 @@ function App() {
   const [party, setParty] = useState([]);
   const [mainRender, setMainRender] = useState(<Home intro={intro} />);
 
+  let partyCount = 0
+
   const recruitParty = () => {
     setParty(partyMembers)
     setMainRender(<Encounter1 n1Good={n1Good} n1Bad={n1Bad} n1Neutral={n1Neutral} />)
+    partyCount = 5
   }
   const n1Good = () => {
     setMainRender(<Encouter1Good postN1={postN1}/>)
@@ -181,17 +202,123 @@ function App() {
   }
   const postN5 = () => {
     setInventory( [inventoryItems[0],inventoryItems[1], inventoryItems[2], inventoryItems[3], inventoryItems[4]])
-    setMainRender(<PostEncounter5 boss={boss}/>)
+    setMainRender(<PostEncounter5 boss1={boss1}/>)
   }
-  const boss= () => {
-    setMainRender(<Boss />)
+  const boss1 = () => {
+    setMainRender(<Boss1 boss2={boss2} b1Magazine={b1Magazine}b1Lightsaber={b1Lightsaber} b1GolfClub={b1GolfClub} b1Pebble={b1Pebble} />)
+  }
+  const boss1Bad = () => {
+    partyCount = partyCount - 1
+    let newParty = []
+    for(let i = 0; i < partyCount; i++) {
+      newParty.push(partyMembers[i])
+    }
+    setParty(newParty)
+
+    if(partyCount == 0) {
+      setMainRender(<GameOver newGame={newGame}/>)
+    } else {
+      setMainRender(<Boss1 boss2={boss2} b1Magazine={b1Magazine}b1Lightsaber={b1Lightsaber} b1GolfClub={b1GolfClub} b1Pebble={b1Pebble} />)
+    }
+  }
+  const b1Magazine = () => {
+    setMainRender(<Boss1Magazine boss1Bad={boss1Bad}/>)
+  }
+  const b1Lightsaber = () => {
+    setMainRender(<Boss1Lightsaber boss1Bad={boss1Bad}/>)
+  }
+  const b1GolfClub = () => {
+    setMainRender(<Boss1GolfClub boss1Bad={boss1Bad} />)
+  }
+  const b1Pebble = () => {
+    setMainRender(<Boss1Pebble boss1Bad={boss1Bad}/>)
+  }
+  const boss2 = () => {
+    setInventory([inventoryItems[1],inventoryItems[2],inventoryItems[3],inventoryItems[4]])
+    setMainRender(<Boss2 b2Magazine={b2Magazine} b2Lightsaber={b2Lightsaber} b2Pebble={b2Pebble} boss3={boss3} />)
+  }
+  const boss2Bad = () => {
+    partyCount = partyCount - 1
+    let newParty = []
+    for(let i = 0; i < partyCount; i++) {
+      newParty.push(partyMembers[i])
+    }
+    setParty(newParty)
+
+    if(partyCount == 0) {
+      setMainRender(<GameOver newGame={newGame}/>)
+    } else {
+      setMainRender(<Boss2 boss3={boss3} b2Magazine={b2Magazine}b2Lightsaber={b2Lightsaber} b2Pebble={b2Pebble} />)
+    }
+  }
+  const b2Magazine = () => {
+    setMainRender(<Boss2Magazine boss2Bad={boss2Bad}/>)
+  }
+  const b2Lightsaber = () => {
+    setMainRender(<Boss2Lightsaber boss2Bad={boss2Bad}/>)
+  }
+  const b2Pebble = () => {
+    setMainRender(<Boss2Pebble boss2Bad={boss2Bad}/>)
+  }
+  const boss3 = () => {
+    setInventory([inventoryItems[1],inventoryItems[2],inventoryItems[4]])
+    setMainRender(<Boss3 b3Magazine={b3Magazine} b3Pebble={b3Pebble} boss4={boss4} />)
+  }
+  const boss3Bad = () => {
+    partyCount = partyCount - 1
+    let newParty = []
+    for(let i = 0; i < partyCount; i++) {
+      newParty.push(partyMembers[i])
+    }
+    setParty(newParty)
+
+    if(partyCount == 0) {
+      setMainRender(<GameOver newGame={newGame}/>)
+    } else {
+      setMainRender(<Boss3 boss4={boss4} b3Magazine={b3Magazine}boss4={boss4} b3Pebble={b3Pebble} />)
+    }
+  }
+  const b3Magazine = () => {
+    setMainRender(<Boss3Magazine boss3Bad={boss3Bad}/>)
+  }
+  const b3Pebble = () => {
+    setMainRender(<Boss3Pebble boss3Bad={boss3Bad}/>)
+  }
+  const boss4 = () => {
+    setInventory([inventoryItems[1], inventoryItems[4]])
+    setMainRender(<Boss4 b4Magazine={b4Magazine} boss5={boss5} />)
+  }
+  const b4Magazine = () => {
+    setMainRender(<Boss4Magazine boss5={boss5} boss4Bad={boss4Bad}/>)
+  }
+  const boss4Bad = () => {
+    partyCount = partyCount - 1
+    let newParty = []
+    for(let i = 0; i < partyCount; i++) {
+      newParty.push(partyMembers[i])
+    }
+    setParty(newParty)
+
+    if(partyCount == 0) {
+      setMainRender(<GameOver newGame={newGame}/>)
+    } else {
+      setMainRender(<Boss4 boss5={boss5} b4Magazine={b4Magazine} />)
+    }
+  }
+  const boss5 = () => {
+    setInventory([inventoryItems[1]])
+    setMainRender(<Boss5 victory={victory} />)
+  }
+  const victory = () => {
+    setInventory([])
+    setMainRender(<Victory newGame={newGame}/>)
   }
 
   return (
     <div className="App">
       {inventory.length > 0 && <Inventory inventory={inventory} />}
       <MainBox  intro={intro} mainRender={mainRender} />
-      {party.length > 0 && <Party  />}
+      {party.length > 0 && <Party party={party} />}
     </div>
   );
 }
