@@ -6,7 +6,7 @@ export default function Intro({ recruitParty }) {
             <img id="game-over" src="./img/space.jpeg" alt="" />
             <h2>Stranger: "WHO WANTS TO ADVENTURE WITH ME?"</h2>
             <h2>( Silence fills the air )</h2>
-            <h2>Stranger: "THERE'LL BE MUGGIN AND BRAWLIN'!"</h2>
+            <h2>Stranger: "THERE'LL BE MUGGIN' AND BRAWLIN'!"</h2>
             <h2>( A few sets of ears prick up but no one takes the bait )</h2>
             <h2>Stranger: "AND TREASURE"</h2>
             <h2>Furry Monster: "WELL WHY DIDN'T YOU START WITH THAT YA FLARKIN' NUMBSKULL?"</h2>

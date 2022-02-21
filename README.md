@@ -34,6 +34,12 @@ I chose react I was I was not 100% comfortable using it yet. The following were 
 
 No unsolved issues on this project, just abandoned ideas such as stats for party members. 
 
+Formatting for smaller screen would be the next step I would take in this project however
+
+I realized after deplying that the images used were probably too big and are causing some slow down issues. Another thing I would focus on is improving oerfirmance sopeed of the app. 
+
+I would also probably add in a health bar for the boss battle.
+
 ## Link to wireframe and user stories
 
 https://trello.com/b/uyVPBjct/onions-and-flagons
