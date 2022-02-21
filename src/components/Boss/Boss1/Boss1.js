@@ -3,6 +3,7 @@ export default function Boss1({ boss2, b1Magazine, b1Lightsaber, b1GolfClub, b1P
     return (
         <div>
             <h1>It's a Golem</h1>
+            <img id="game-over" src="./img/rock.jpeg" alt=""/>
             <h2>Golem: "Not just any golem. I am their king. Face me mortals. Face the might of DWAYE "THE ROCK" GOLEM"</h2>
             <h2>( The golem steps out of the people's limosine and fist bumps his chauffeur )</h2>
             <h2>Rocket:  "Bring it on, Pebble Butt"</h2>

@@ -54,54 +54,54 @@ function App() {
   const partyMembers = [
     {
       "name": "Starlord",
-      "img": "./starlord.jpeg",
+      "img": "./img/starlord.jpeg",
       "race": "Terran"
     },
     {
       "name": "Gamora",
-      "img": "./gamora.png",
+      "img": "./img/gamora.png",
       "race": "Zen-Whoberi"
     },
     {
       "name": "Drax",
-      "img": "./drax.jpeg",
+      "img": "./img/drax.jpeg",
       "race": "Kylosian"
     },
     {
       "name": "Rocket",
-      "img": "./rocket.png",
+      "img": "./img/rocket.png",
       "race": "Not a raccoon"
     },
     {
       "name": "Groot",
-      "img": "./groot.jpeg",
+      "img": "./img/groot.jpeg",
       "race": "Flora Colossi"
     }
   ]
   const inventoryItems = [
     {
       "name": "Razor",
-      "img": "./razor.jpg",
+      "img": "./img/razor.jpg",
       "description": "Signed by Terran band The Village People"
     },
     {
       "name": "Magazine",
-      "img": "./magazine.jpeg",
+      "img": "./img/magazine.jpeg",
       "description": "Deep fried trash magazine"
     },
     {
       "name": "Lightsaber",
-      "img": "./lightsaber.png",
+      "img": "./img/lightsaber.png",
       "description": "Voosh wwwwwahhhh shhwooo"
     },
     {
       "name": "Golf club",
-      "img": "./golf.jpeg",
+      "img": "./img/golf.jpeg",
       "description": "Looted from Adam Driver"
     },
     {
       "name": "Pebble",
-      "img": "./pebble.jpeg",
+      "img": "./img/pebble.jpeg",
       "description": "A frozen stone"
     }
   ]
@@ -111,6 +111,10 @@ function App() {
   }
   const newGame = () => {
     partyCount = 0
+    megalovania.pause()
+    megalovania.currentTime = 0
+    zelda.pause()
+    zelda.currentTime = 0
     setMainRender(<Home intro={intro}/>)
     setParty([])
     setInventory([])
@@ -121,17 +125,27 @@ function App() {
   const [mainRender, setMainRender] = useState(<Home intro={intro} />);
 
   let partyCount = 0
+  const lawAndOrder = new Audio('./sounds/Law-and-order-sound.mp3')
+  const megalovania = new Audio('./sounds/megalovania.mp3')
+  const mario = new Audio('./sounds/mario.mp3')
+  const ko = new Audio('./sounds/ko.mp3')
+  const darkSouls = new Audio('./sounds/darkSouls.mp3')
+  const zelda = new Audio('./sounds/zelda.mp3')
 
   const recruitParty = () => {
     setParty(partyMembers)
     setMainRender(<Encounter1 n1Good={n1Good} n1Bad={n1Bad} n1Neutral={n1Neutral} />)
+    lawAndOrder.play();
     partyCount = 5
   }
   const n1Good = () => {
     setMainRender(<Encouter1Good postN1={postN1}/>)
   }
   const n1Bad = () => {
+    setParty([])
+    setInventory([])
     setMainRender(<Encounter1Bad newGame={newGame}/>);
+    mario.play();
   }
   const n1Neutral = () => {
    setMainRender(<Encounter1Neutral recruitParty={recruitParty} />)
@@ -142,12 +156,16 @@ function App() {
   }
   const encounter2 = () => {
     setMainRender(<Encounter2 n2Good={n2Good} n2Bad={n2Bad} n2Neutral={n2Neutral} />)
+    lawAndOrder.play();
   }
   const n2Good = () => {
     setMainRender(<Encounter2Good postN2={postN2}/>)
   }
   const n2Bad = () => {
+    setParty([])
+    setInventory([])
     setMainRender(<Encounter2Bad newGame={newGame}/>)
+    darkSouls.play();
   }
   const n2Neutral = () => {
     setMainRender(<Encounter2Neutral encounter2={encounter2}/>)
@@ -158,12 +176,16 @@ function App() {
   }
   const encounter3 = () => {
     setMainRender(<Encounter3 n3Good={n3Good} n3Bad={n3Bad} n3Neutral={n3Neutral} />)
+    lawAndOrder.play();
   }
   const n3Good = () => {
     setMainRender(<Encounter3Good postN3={postN3}/>)
   }
   const n3Bad = () => {
+    setParty([])
+    setInventory([])
     setMainRender(<Encounter3Bad newGame={newGame} />)
+    darkSouls.play();
   }
   const n3Neutral = () => {
     setMainRender(<Encounter3Neutral encounter3={encounter3}/>)
@@ -174,12 +196,16 @@ function App() {
   }
   const encounter4 = () => {
     setMainRender(<Encounter4 n4Good={n4Good} n4Bad={n4Bad} n4Neutral={n4Neutral} />)
+    lawAndOrder.play();
   }
   const n4Good = () => {
     setMainRender(<Encounter4Good postN4={postN4}/>)
   }
   const n4Bad = () => {
+    setParty([])
+    setInventory([])
     setMainRender(<Encounter4Bad newGame={newGame} />)
+    mario.play();
   }
   const n4Neutral = () => {
     setMainRender(<Encounter4Neutral encounter4={encounter4} />)
@@ -190,12 +216,16 @@ function App() {
   }
   const encounter5 = () => {
     setMainRender(<Encounter5 n5Good={n5Good} n5Bad={n5Bad} n5Neutral={n5Neutral} />)
+    lawAndOrder.play();
   }
   const n5Good = () => {
     setMainRender(<Encounter5Good postN5={postN5}/>)
   }
   const n5Bad = () => {
+    setParty([])
+    setInventory([])
     setMainRender(<Encounter5Bad newGame={newGame} />)
+    darkSouls.play();
   }
   const n5Neutral = () => {
     setMainRender(<Encounter5Neutral encounter5={encounter5} />)
@@ -206,6 +236,7 @@ function App() {
   }
   const boss1 = () => {
     setMainRender(<Boss1 boss2={boss2} b1Magazine={b1Magazine}b1Lightsaber={b1Lightsaber} b1GolfClub={b1GolfClub} b1Pebble={b1Pebble} />)
+    megalovania.play();
   }
   const boss1Bad = () => {
     partyCount = partyCount - 1
@@ -215,22 +246,29 @@ function App() {
     }
     setParty(newParty)
 
-    if(partyCount == 0) {
+    if(partyCount === 0) {
+      megalovania.pause()
+      megalovania.currentTime = 0
+      mario.play()
       setMainRender(<GameOver newGame={newGame}/>)
     } else {
       setMainRender(<Boss1 boss2={boss2} b1Magazine={b1Magazine}b1Lightsaber={b1Lightsaber} b1GolfClub={b1GolfClub} b1Pebble={b1Pebble} />)
     }
   }
   const b1Magazine = () => {
+    ko.play()
     setMainRender(<Boss1Magazine boss1Bad={boss1Bad}/>)
   }
   const b1Lightsaber = () => {
+    ko.play()
     setMainRender(<Boss1Lightsaber boss1Bad={boss1Bad}/>)
   }
   const b1GolfClub = () => {
+    ko.play()
     setMainRender(<Boss1GolfClub boss1Bad={boss1Bad} />)
   }
   const b1Pebble = () => {
+    ko.play()
     setMainRender(<Boss1Pebble boss1Bad={boss1Bad}/>)
   }
   const boss2 = () => {
@@ -245,20 +283,27 @@ function App() {
     }
     setParty(newParty)
 
-    if(partyCount == 0) {
+    if(partyCount === 0) {
       setMainRender(<GameOver newGame={newGame}/>)
+      megalovania.pause()
+      megalovania.currentTime = 0
+      mario.play()
     } else {
       setMainRender(<Boss2 boss3={boss3} b2Magazine={b2Magazine}b2Lightsaber={b2Lightsaber} b2Pebble={b2Pebble} />)
+
     }
   }
   const b2Magazine = () => {
     setMainRender(<Boss2Magazine boss2Bad={boss2Bad}/>)
+    ko.play()
   }
   const b2Lightsaber = () => {
     setMainRender(<Boss2Lightsaber boss2Bad={boss2Bad}/>)
+    ko.play()
   }
   const b2Pebble = () => {
     setMainRender(<Boss2Pebble boss2Bad={boss2Bad}/>)
+    ko.play()
   }
   const boss3 = () => {
     setInventory([inventoryItems[1],inventoryItems[2],inventoryItems[4]])
@@ -272,17 +317,22 @@ function App() {
     }
     setParty(newParty)
 
-    if(partyCount == 0) {
+    if(partyCount === 0) {
       setMainRender(<GameOver newGame={newGame}/>)
+      mario.play()
+      megalovania.pause()
+      megalovania.currentTime = 0
     } else {
-      setMainRender(<Boss3 boss4={boss4} b3Magazine={b3Magazine}boss4={boss4} b3Pebble={b3Pebble} />)
+      setMainRender(<Boss3 boss4={boss4} b3Magazine={b3Magazine} b3Pebble={b3Pebble} />)
     }
   }
   const b3Magazine = () => {
     setMainRender(<Boss3Magazine boss3Bad={boss3Bad}/>)
+    ko.play()
   }
   const b3Pebble = () => {
     setMainRender(<Boss3Pebble boss3Bad={boss3Bad}/>)
+    ko.play()
   }
   const boss4 = () => {
     setInventory([inventoryItems[1], inventoryItems[4]])
@@ -290,6 +340,7 @@ function App() {
   }
   const b4Magazine = () => {
     setMainRender(<Boss4Magazine boss5={boss5} boss4Bad={boss4Bad}/>)
+    ko.play()
   }
   const boss4Bad = () => {
     partyCount = partyCount - 1
@@ -299,8 +350,11 @@ function App() {
     }
     setParty(newParty)
 
-    if(partyCount == 0) {
+    if(partyCount === 0) {
       setMainRender(<GameOver newGame={newGame}/>)
+      mario.play()
+      megalovania.pause()
+      megalovania.currentTime = 0
     } else {
       setMainRender(<Boss4 boss5={boss5} b4Magazine={b4Magazine} />)
     }
@@ -310,6 +364,9 @@ function App() {
     setMainRender(<Boss5 victory={victory} />)
   }
   const victory = () => {
+    megalovania.pause()
+    megalovania.currentTime = 0
+    zelda.play();
     setInventory([])
     setMainRender(<Victory newGame={newGame}/>)
   }

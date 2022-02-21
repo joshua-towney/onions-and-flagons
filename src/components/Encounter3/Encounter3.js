@@ -3,6 +3,7 @@ export default function Encounter3({ n3Good, n3Bad, n3Neutral }) {
     return (
         <div>
             <h1>Strange new world</h1>
+            <img id="game-over" src="./img/luke.jpeg" alt=""/>
             <h2>Starlord: "Where the d'ast are we?"</h2>
             <h2>( Surveying the scenary reveals a contryside filled with outdated infrastructure and... a castle?"" )</h2>
             <h2>Stranger: "Salutaions off-worlders. You have trespassed into the kingdom of Hammillot. For this transgression, I sentence you to death by fire-sword"</h2>
@@ -17,7 +18,7 @@ export default function Encounter3({ n3Good, n3Bad, n3Neutral }) {
                 <button onClick={n3Bad}>Jump him</button>
             </div>
             <div>
-                <button onClick={n3Good}>USE magazine WITH Hamillot</button>
+                <button onClick={n3Good}>USE magazine WITH Sir Hamillot</button>
             </div>
         </div>
     )

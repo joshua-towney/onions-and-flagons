@@ -3,6 +3,7 @@ export default function Encounter2Good({ postN2 }) {
     return (
         <div>
             <h1>2 can play at that game</h1>
+            <img id="game-over" src="./img/reverseMoustache.webp" alt=""/>
             <h2>( Drax goes to rip of his own moustache but quickly realizes there is nothing there, on anyone in the room for that matter )</h2>
             <h2>Drax: "TAKE THIS TITAN!!"</h2>
             <h2>( Drax yanks on the fur above Rocket's mouth, scalping his lip in the process )</h2>

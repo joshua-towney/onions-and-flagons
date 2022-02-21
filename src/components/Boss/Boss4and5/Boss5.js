@@ -3,6 +3,7 @@ export default function Boss5({ victory }) {
     return (
         <div>
             <h1>STUNNER! STUNNER! STUNNER!</h1>
+            <img id="game-over" src="./img/stunner.gif" />
             <h2>The frozen pebble removes it's wig to reveal...... By god as my witness, it was Stone Cold all along</h2>
             <h2>He marches up to the chisled specimen and delivers a brutal Stone Cold Stunner</h2>
             <h2>The golem is dazed</h2>

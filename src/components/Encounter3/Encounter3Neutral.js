@@ -4,6 +4,7 @@ export default function Encounter3Neutral({ encounter3 }) {
     return (
         <div>
             <h1>riggggghhhht</h1>
+            <img id="game-over" src="./img/Ouroboros.jpeg" />
             <h2>Groot: "I am .... Groooot"</h2>
             <h2>( Sir Hamillot stands visably confused )</h2>
             <h2>Rocket: "He said he is your father"</h2>

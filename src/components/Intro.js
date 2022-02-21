@@ -1,9 +1,9 @@
-import './Intro.css'
 
 export default function Intro({ recruitParty }) {
     return (
         <div>
             <h1>A new adventure awaits...</h1>
+            <img id="game-over" src="./img/space.jpeg" alt="" />
             <h2>Stranger: "WHO WANTS TO ADVENTURE WITH ME?"</h2>
             <h2>( Silence fills the air )</h2>
             <h2>Stranger: "THERE'LL BE MUGGIN AND BRAWLIN'!"</h2>

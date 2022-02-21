@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 1px solid black;
-}
+} */
 html,
 body,
 #root {
@@ -11,7 +11,11 @@ body,
 .App {
   display: flex;
   height: 100%;
+  width: 100%;
   text-align: center;
+}
+h1 {
+  margin-top: 0;
 }
 h3 {
   text-align: left;
@@ -24,8 +28,4 @@ ul {
 }
 button {
   font-size: larger;
-}
-#game-over {
-  height: 300px;
-  width: 300px;
 }

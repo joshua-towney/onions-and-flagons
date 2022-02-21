@@ -3,6 +3,7 @@ export default function Encounter5({ n5Good, n5Bad, n5Neutral }) {
     return (
         <div>
             <h1>Big ship, little man</h1>
+            <img id="game-over" src="./img/hamburglar.jpeg" alt=""/>
             <h2>Gamora: "HALT! THIEF!"</h2>
             <h2>Starlord: "Wait a minute. Hamburglar?"</h2>
             <h2>Hamburglar: "I didn't do nothin"</h2>

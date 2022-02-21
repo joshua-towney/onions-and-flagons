@@ -3,6 +3,7 @@ export default function PostEncounter5({ boss1 }) {
     return (
         <div>
             <h1>Good to be back off solid ground</h1>
+            <img id="game-over" src="./img/challenger.png" alt=""/>
             <h2>( The crew head to the cockpit and find a napsack hanging off the yoke )</h2>
             <h2>Drax: "Open the runts aggage and let's take his possessions"</h2>
             <h2>Gamora: "It's a... frozen rock. Useless, I'm chucking it"</h2>

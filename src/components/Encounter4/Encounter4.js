@@ -3,6 +3,7 @@ export default function Encounter4({ n4Good, n4Bad, n4Neutral }) {
     return (
         <div>
             <h1>Ewwwwww</h1>
+            <img id="game-over" src="./img/foot.jpeg" alt=""/>
             <h2>( Starlord reulctantly turns around fins the biggest torsoed man he has ever seen in his life staring down at him )</h2>
             <h2>Stranger: "Hey there friend. Names Adam"</h2>
             <h2>( Adam puts out his hand )</h2>

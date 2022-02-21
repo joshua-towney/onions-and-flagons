@@ -3,6 +3,7 @@ export default function Encounter5Good({ postN5 }) {
     return (
         <div>
             <h1>Everyone has a vice</h1>
+            <img id="game-over" src="./img/bullets.jpeg" alt=""/>
             <h2>( Rocket pulls out the out Maccas bag from the start of the trip )</h2>
             <h2>Hamburglar: "Is that... hamburgers?"</h2>
             <h2>Rocket: Flarked if I know. Here! Catch!</h2>

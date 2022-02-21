@@ -11,8 +11,8 @@ export default function Party({ party }) {
                             <img src={member.img} />
                         </div>
                         <div>
-                            <h3>{member.name}</h3>
-                            <p>{member.race}</p>
+                            <h2>{member.name}</h2>
+                            <h3>{member.race}</h3>
                         </div>
                     </section>
                 )

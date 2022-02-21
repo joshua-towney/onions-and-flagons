@@ -3,6 +3,7 @@ export default function PostEncounter4({ encounter5 }) {
     return (
         <div>
             <h1>Nice find</h1>
+            <img id="game-over" src="./img/getIt.jpeg" alt=""/>
             <h2>( The team tear at his corpse like a pack of hyenas. Only one item of note was worth taking )</h2>
             <h2>Starlord: "Niceeeeeee. A golf club"</h2>
             <h2>Gamora: "What's a golf?"</h2>
